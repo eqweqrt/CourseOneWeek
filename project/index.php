@@ -1,150 +1,135 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Пример встраивания PHP в HTML</title>
-</head>
-<body>
-<!--    Задние 1  Переменные в PHP  -->
-<h1>Пример встраивания PHP в HTML</h1>
-<!--2 + 2 = <?php echo 4; ?>--->
 <?php
-    /*$a = 3;
-    $b = 5;
+/*$array = [
+    'level1' => [
+        'level2' => [
+            'level3' => [
+                'element1' => 'value1',
+                'element2' => 'value2'
+            ]
+        ]
+    ]
+];
 
-    $c = $a;
-    $a = $b;
-    $b = $c;
+$array['level1']['level2']['level3']['element3'] = 'value3';
+$array['level1']['level2']['level3']['element4'] = 'value4';
 
-    $a = 3;
-    $b = 5;
-    $a = $a + $b;
-    $b = $a - $b;
-    $a = $a - $b;
+echo print_r($array);
+*/
 
+/*
+$carsSpeeds = [
+    95,
+    140,
+    78
+];
 
-    /*
-        !1
-        !0
-        !true
-        2 && 3
-        5 && 0
-        3 || 0
-        5 / 1
-        1 / 5
-        5 + '5string'
-        '5' == 5
-        '05' == 5
-        '05' == '5'
-    */
-    /*
-    echo var_dump(!1);
-    echo var_dump(!0);
-    echo var_dump(!true);
-    echo var_dump(2 && 3);
-    echo var_dump(5 && 0);
-    echo var_dump(3 || 0);
-    echo var_dump(5 / 1);
-    echo var_dump(1 / 5);
-    echo var_dump(5 + '5string');
-    echo var_dump('5' == 5);
-    echo var_dump('05' == 5);
-    echo var_dump('05' == '5');
-    */
+$sumOfSpeeds = 0;
+$countOfCars = 0;
 
-    /*
-     *
+foreach ($carsSpeeds as $speed) {
+    $sumOfSpeeds += $speed;
+    $countOfCars++;
+}
 
-    Попробуйте следующие условия:
+$averageSpeed = $sumOfSpeeds / $countOfCars;
 
-        if ('string') {echo 'Условие выполнилось';}
-        if (0) {echo 'Условие выполнилось';}
-        if (null) {echo 'Условие выполнилось';}
-        if (5) {echo 'Условие выполнилось';}
+echo 'Средняя скорость движения по трассе: ' . $averageSpeed;
+*/
+/*
+$evenNumbers = [];
+$number = 345;
 
-    Объясните результат.
-
-    /*
-    if ('string') {
-        echo 'Условие выполнилось<br>';
+while ($number <= 357) {
+    if ($number % 2 == 0) {
+        $evenNumbers[] = $number;
     }
-    if (0) {
-        echo 'Условие выполнилось<br>';
-    }
-    if (null) {
-        echo 'Условие выполнилось<br>';
-    }
-    if (5) {
-        echo 'Условие выполнилось<br>';
-    }
+    $number++;
+}
 
-    $number = 7;
+foreach ($evenNumbers as $number) {
+    echo $number . "<br>";
+}
+*/
+/*
+$input = 'hello world';
+$words = explode(' ', $input);
 
-    $result = ($number % 2 == 0) ? 'Чётное' : 'Нечётное';
-    echo "Число $number является $result.";
-    */
+$reversedWords = [];
+for ($i = count($words) - 1; $i >= 0; $i--) {
+    $reversedWords[] = $words[$i];
+}
 
-    /*
-    function findMin($a, $b, $c)
-    {
-        return min($a, $b, $c);
-    }
+$output = implode(' ', $reversedWords);
+echo $output;
+*/
+/*
+$input = 'hello world';
+$output = strtoupper($input);
+echo $output;
+*/
 
-    $minValue = findMin(3.5, 2.1, 4.8);
-    echo "Минимальное значение: $minValue<br>";
-
-
-    function multiplyByTwo(&$a, &$b)
-    {
-        $a *= 2;
-        $b *= 2;
-    }
-
-    $x = 5;
-    $y = 10;
-    multiplyByTwo($x, $y);
-    echo "x = $x, y = $y<br>";
-
-
-    function factorial($n)
-    {
-        if ($n <= 1) {
-            return 1;
+/*
+function containsValue($array, $value)
+{
+    foreach ($array as $item) {
+        if ($item === $value) {
+            return true;
         }
-        return $n * factorial($n - 1);
     }
-    $result = factorial(5);
-    echo "Факториал 5: $result<br>";
+    return false;
+}
+$array = [1, 2, 3, 4, 5];
+$value = 3;
+echo containsValue($array, $value) ? 'true<br>' : 'false<br>';
 
-
-    function printNumbers($n)
-    {
-        if ($n < 0) {
-            return;
+function countOccurrences($array, $value)
+{
+    $count = 0;
+    foreach ($array as $item) {
+        if ($item === $value) {
+            $count++;
         }
-        printNumbers($n - 1);
-        echo "$n\n";
     }
+    return $count;
+}
+$array = [1, 2, 1, 3];
+$value = 1;
+echo countOccurrences($array, $value) . '<br>';
 
-    printNumbers(5);
-    */
+function fibonacci($n)
+{
+    $sequence = [];
+    if ($n >= 1) {
+        $sequence[] = 0;
+    }
+    if ($n >= 2) {
+        $sequence[] = 1;
+    }
+    for ($i = 2; $i < $n; $i++) {
+        $sequence[] = $sequence[$i - 1] + $sequence[$i - 2];
+    }
+    return implode(' ', $sequence);
+}
+$n = 10;
+echo fibonacci($n);
+*/
+/*
+$array = [1, 3, 2];
+sort($array);
+$result = implode(':', $array);
+echo $result . '<br>';
 
 
-    /*$title = 'Заголовок страницы';
-    $header = 'HEADER';
-    $sidebar = 'SIDEBAR';
-    $content = '<h1>Заголовок статьи</h1><p>Текст какой-то статьи</p>';
-    $footer = 'FOOTER';
+$array = [1, 2, 3, 4, 5];
+$subArray = array_slice($array, 1, 3);
+echo print_r($subArray) . '<br>';
 
-    require __DIR__ . '/header.php';
-    require __DIR__ . '/sidebar.php';
-    require __DIR__ . '/content.php';
-    require __DIR__ . '/footer.php';
-
-    $var = include 'file.php';
-    echo $var;*/
+$input = '0 2 3 1 2';
+$numbers = explode(' ', $input);
+$uniqueNumbers = array_unique($numbers);
+$output = implode(' ', $uniqueNumbers);
+echo $output;
+*/
 
 
-    ?>
-</body>
-</html>
+?>
