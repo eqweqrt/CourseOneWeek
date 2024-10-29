@@ -10,7 +10,7 @@ $login = getUserLogin();
 </head>
 <body>
 <?php if ($login === null): ?>
-    <a href="/login2.php">Авторизуйтесь</a>
+    <a href="/project/login2.php">Авторизуйтесь</a>
 <?php else: ?>
     Добро пожаловать, <?= $login ?>
     <br>

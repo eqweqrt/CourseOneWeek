@@ -4,7 +4,7 @@
     <title>Форма входа</title>
 </head>
 <body>
-<form action="/login.php" method="post">
+<form action="/project/login.php" method="post">
     <label>
         Логин <input type="text" name="login" required>
     </label>
