@@ -1,4 +1,5 @@
 <?php
+
 function printOwnCode() {
     $code = file_get_contents(__FILE__);
     echo htmlspecialchars($code);

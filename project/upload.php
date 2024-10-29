@@ -1,5 +1,5 @@
 <?php
-function generatePairs($input) {
+function generatePair($input) {
     $numbers = array_map('intval', explode(' ', $input));
     $pairs = [];
     foreach ($numbers as $i) {
@@ -13,5 +13,6 @@ function generatePairs($input) {
         echo $pair[0] . ' ' . $pair[1] . PHP_EOL;
     }
 }
+
 $input = "1 2 3";
-generatePairs($input);
+generatePair($input);

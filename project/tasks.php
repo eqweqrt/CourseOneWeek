@@ -2,7 +2,7 @@
 
 function generatePairs($input)
 {
-    $numbers = array_map('intval', explode(' ', $input));
+    $numbers = array_map('intvl', explode(' ', $input));
     $pairs = [];
     foreach ($numbers as $i) {
         foreach ($numbers as $j) {
